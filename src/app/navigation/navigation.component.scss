@@ -11,7 +11,12 @@
 }
 
 .btn{
-  @apply transition duration-100 hover:bg-blue-400 my-0 rounded-lg my-1 px-2 py-1 hover:text-fuchsia-900;
+  @apply transition duration-100 hover:bg-blue-400 rounded-lg my-1 px-2 py-1
+   mx-0.5 hover:text-fuchsia-900 cursor-pointer;
+}
+
+.active{
+  @apply bg-blue-400 text-fuchsia-900;
 }
 
 .icon{
