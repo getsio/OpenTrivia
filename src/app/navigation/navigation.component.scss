@@ -1,0 +1,19 @@
+.navbar{
+  @apply flex flex-row bg-blue-600 px-5 text-slate-50 text-lg shadow-lg ;
+}
+
+.leftbar{
+  @apply flex flex-row flex-grow ;
+}
+
+.rightbar{
+  @apply flex flex-row-reverse flex-grow ;
+}
+
+.btn{
+  @apply transition duration-100 hover:bg-blue-400 my-0 rounded-lg my-1 px-2 py-1 hover:text-fuchsia-900;
+}
+
+.icon{
+  @apply mr-2;
+}
