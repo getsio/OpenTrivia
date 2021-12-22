@@ -1,1 +1,8 @@
-<p>question works!</p>
+<div *ngIf="questions.length">
+  <p [innerHTML]="questions[0].category"></p>
+  <p [innerHTML]="questions[0].difficulty"></p>
+  <p [innerHTML]="questions[0].type"></p>
+  <p [innerHTML]="questions[0].text" class="inline"></p>
+  <p [innerHTML]="questions[0].correct_answer"></p>
+  <p *ngFor="let answer of questions[0].answers" [innerHTML]="answer"></p>
+</div>
