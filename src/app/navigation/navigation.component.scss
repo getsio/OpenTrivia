@@ -3,16 +3,16 @@
 }
 
 .leftbar {
-  @apply flex flex-row flex-grow;
+  @apply flex flex-row flex-grow items-stretch;
 }
 
 .rightbar {
-  @apply flex flex-row-reverse flex-grow;
+  @apply flex flex-row-reverse flex-grow items-stretch;
 }
 
 .btn {
   @apply transition duration-100 hover:bg-blue-400 rounded-lg my-1 px-2 py-1
-   mx-0.5 hover:text-fuchsia-900 cursor-pointer;
+   mx-0.5 hover:text-fuchsia-900 cursor-pointer flex items-center text-base;
 }
 
 .active {
@@ -21,4 +21,8 @@
 
 .icon {
   @apply mr-2;
+}
+
+.home {
+  @apply rounded-lg my-1 px-2 py-1 mx-0.5 text-2xl mr-6;
 }

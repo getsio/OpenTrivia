@@ -1,5 +1,9 @@
 <div class="navbar">
   <div class="leftbar">
+    <a routerLink="" class="home">
+      <fa-icon [icon]="faHome" class="icon"></fa-icon>
+      <p class="inline">OpenTrivia</p>
+    </a>
     <ng-container *ngFor="let navlink of navlinks">
       <a
         *ngIf="navlink.status"

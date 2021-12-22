@@ -2,6 +2,7 @@ import { Navlink } from './../navlink';
 import { Component, OnInit } from '@angular/core';
 
 import { NavlinkService } from '../navlink.service';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navigation',
@@ -11,6 +12,7 @@ import { NavlinkService } from '../navlink.service';
 export class NavigationComponent implements OnInit {
   navlinks: Navlink[] = [];
   rightlinks: Navlink[] = [];
+  faHome = faHome;
 
   constructor(private navlinkService: NavlinkService) { }
 

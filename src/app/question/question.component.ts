@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.scss'],
 })
 export class QuestionComponent implements OnInit {
+  currentQuestion: number = 0;
   questions: Question[] = [];
 
   constructor(private questionService: QuestionService) {}
@@ -22,7 +23,9 @@ export class QuestionComponent implements OnInit {
       .subscribe((questions) => (this.questions = questions));
 
     this.questions.forEach((question) => {
-      question.answers.push(question.correct_answer);
+      if(!question.answers.includes(question.correct_answer)){
+        question.answers.push(question.correct_answer);
+      }
       question.answers = this.shuffle(question.answers);
     });
   }
@@ -46,4 +49,14 @@ export class QuestionComponent implements OnInit {
 
     return array;
   }
+
+  changeQuestion(): void{
+    this.currentQuestion++;
+  }
+
+  resetQuestion(): void{
+    this.currentQuestion = 0;
+  }
+
+
 }
