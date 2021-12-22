@@ -5,11 +5,10 @@ import { Question } from './question';
 import { QUESTIONS } from './mock-questions';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuestionService {
-
-  constructor() { }
+  constructor() {}
 
   getQuestions(): Observable<Question[]> {
     const questions = of(QUESTIONS);

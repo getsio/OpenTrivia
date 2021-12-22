@@ -6,14 +6,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { QuestionComponent } from './question/question.component';
-import { SafeHtmlPipePipe } from './safe-html-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    QuestionComponent,
-    SafeHtmlPipePipe
+    QuestionComponent
   ],
   imports: [
     BrowserModule,

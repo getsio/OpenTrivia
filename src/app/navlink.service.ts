@@ -6,11 +6,10 @@ import { NAVLINKS } from './mock-navlinks';
 import { RIGHTLINKS } from './mock-rightlinks';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavlinkService {
-
-  constructor() { }
+  constructor() {}
 
   getNavlinks(): Observable<Navlink[]> {
     const navlinks = of(NAVLINKS);

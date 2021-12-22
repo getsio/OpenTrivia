@@ -1,17 +1,22 @@
 <div class="navbar">
   <div class="leftbar">
     <ng-container *ngFor="let navlink of navlinks">
-      <a *ngIf="navlink.status" routerLink="{{navlink.link}}" routerLinkActive="active" class="btn">
+      <a
+        *ngIf="navlink.status"
+        routerLink="{{ navlink.link }}"
+        routerLinkActive="active"
+        class="btn"
+      >
         <fa-icon [icon]="navlink.icon" class="icon"></fa-icon>
-        <p class="inline">{{navlink.text}}</p>
+        <p class="inline">{{ navlink.text }}</p>
       </a>
     </ng-container>
   </div>
   <div class="rightbar">
     <ng-container *ngFor="let rightlink of rightlinks">
-      <a *ngIf="rightlink.status" routerLink="{{rightlink.link}}" class="btn">
+      <a *ngIf="rightlink.status" routerLink="{{ rightlink.link }}" class="btn">
         <fa-icon [icon]="rightlink.icon" class="icon"></fa-icon>
-        <p class="inline">{{rightlink.text}}</p>
+        <p class="inline">{{ rightlink.text }}</p>
       </a>
     </ng-container>
   </div>
