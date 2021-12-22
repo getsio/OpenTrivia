@@ -1,7 +1,16 @@
 <div class="questionContainer">
-  <div *ngIf="questions[currentQuestion]">
-    <p [innerHTML]="questions[currentQuestion].text" class="inline"></p>
-    <p *ngFor="let answer of questions[currentQuestion].answers" [innerHTML]="answer"></p>
-    <button (click)="changeQuestion()">Weiter</button>
+  <div class="flex flex-col" *ngIf="questions[currentQuestion]">
+    <div class="question">
+      <p [innerHTML]="questions[currentQuestion].text"></p>
+    </div>
+    <div class="answerContainer">
+      <button
+        *ngFor="let answer of questions[currentQuestion].answers"
+        class="btn"
+      >
+        <p [innerHTML]="answer"></p>
+      </button>
+    </div>
+    <button class="continue" (click)="changeQuestion()">Weiter</button>
   </div>
 </div>
