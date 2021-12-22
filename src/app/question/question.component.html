@@ -1,5 +1,5 @@
 <div class="questionContainer">
-  <div class="flex flex-col" *ngIf="questions[currentQuestion]">
+  <div class="flex flex-col" *ngIf="questions[currentQuestion]; else quizresults">
     <div class="question">
       <p [innerHTML]="questions[currentQuestion].text"></p>
     </div>
@@ -7,10 +7,22 @@
       <button
         *ngFor="let answer of questions[currentQuestion].answers"
         class="btn"
+        (click)="validate(answer)"
+        [class.correct]="
+          answerChosen && questions[currentQuestion].correct_answer === answer
+        "
+        [class.wrong]="
+          answerChosen && questions[currentQuestion].correct_answer !== answer
+        "
+        [disabled]="answerChosen"
+        [class.selected]="chosenAnswer && chosenAnswer === answer"
       >
         <p [innerHTML]="answer"></p>
       </button>
     </div>
-    <button class="continue" (click)="changeQuestion()">Weiter</button>
+    <button *ngIf="answerChosen" class="continue" (click)="changeQuestion()">Weiter</button>
   </div>
+  <ng-template #quizresults>
+    <div>Ergebnisse</div>
+  </ng-template>
 </div>

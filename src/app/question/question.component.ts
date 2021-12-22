@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionComponent implements OnInit {
   currentQuestion: number = 0;
   questions: Question[] = [];
+  answerChosen: boolean = false;
+  chosenAnswer?: string;
 
   constructor(private questionService: QuestionService) {}
 
@@ -52,9 +54,16 @@ export class QuestionComponent implements OnInit {
 
   changeQuestion(): void {
     this.currentQuestion++;
+    this.answerChosen = false;
+    this.chosenAnswer = undefined;
   }
 
   resetQuestion(): void {
     this.currentQuestion = 0;
+  }
+
+  validate(chosenAnswer: string): void{
+    this.answerChosen = true;
+    this.chosenAnswer = chosenAnswer;
   }
 }
