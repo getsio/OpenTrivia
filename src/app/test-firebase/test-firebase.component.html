@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let test of testCollectiondata">
+    <p>{{test.id}}, {{test.name}} {{test.nachname}}, {{test.geburtstag.toDate() | date:'dd.MM.YYYY'}}</p>
+  </li>
+</ul>
