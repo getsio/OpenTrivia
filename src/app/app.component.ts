@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +8,5 @@ import { Firestore } from '@angular/fire/firestore';
 export class AppComponent {
   title = 'quiz-app';
 
-  constructor(private store: Firestore) {}
+  constructor() {}
 }

@@ -8,9 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuestionComponent } from './question/question.component';
 import { HomeComponent } from './home/home.component';
 import { StatsComponent } from './stats/stats.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -24,8 +21,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
