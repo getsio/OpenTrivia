@@ -1,7 +1,6 @@
 import { TestfirebaseService } from './../testfirebase.service';
 import { Component, OnInit } from '@angular/core';
 import { DocumentData, QuerySnapshot } from '@firebase/firestore';
-import { Timestamp } from 'firebase/firestore';
 
 @Component({
   selector: 'app-test-firebase',
@@ -41,7 +40,6 @@ export class TestFirebaseComponent implements OnInit {
     this.testCollectiondata = [];
     snapshot.docs.forEach((test) => {
       this.testCollectiondata.push({ ...test.data(), id: test.id });
-      console.log(test.data());
     });
   }
 
