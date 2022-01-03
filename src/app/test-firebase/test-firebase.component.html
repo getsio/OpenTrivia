@@ -1,5 +1,5 @@
-<ul>
-  <li *ngFor="let test of testCollectiondata">
+<ul *ngIf="items">
+  <li *ngFor="let test of items | async">
     <p>{{test.id}}, {{test.name}} {{test.nachname}}, {{test.geburtstag.toDate() | date:'dd.MM.YYYY'}}</p>
   </li>
 </ul>

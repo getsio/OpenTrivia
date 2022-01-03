@@ -1,1 +1,5 @@
-<p>stats works!</p>
+<div *ngIf="leaderboardCollectiondata.length">
+  <li *ngFor="let leaderboard of leaderboardCollectiondata">
+    <p class="inline">{{leaderboard.name}} {{leaderboard.score}}</p>
+  </li>
+</div>

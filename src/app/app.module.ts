@@ -11,6 +11,7 @@ import { StatsComponent } from './stats/stats.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
 
 @NgModule({
@@ -26,6 +27,7 @@ import { TestFirebaseComponent } from './test-firebase/test-firebase.component';
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
   ],

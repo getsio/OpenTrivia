@@ -1,6 +1,7 @@
 import { QuestionService } from './../question.service';
 import { Question } from './../question';
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-question',
@@ -12,6 +13,10 @@ export class QuestionComponent implements OnInit {
   questions: Question[] = [];
   answerChosen: boolean = false;
   chosenAnswer?: string;
+  leaderboardDetails = {
+    name: '',
+    score: 0
+  };
 
   constructor(private questionService: QuestionService) {}
 
