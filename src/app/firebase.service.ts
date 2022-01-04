@@ -13,8 +13,7 @@ import {
   CollectionReference,
   onSnapshot,
   QuerySnapshot,
-  orderBy,
-  limit
+  orderBy
 } from 'firebase/firestore';
 import { Subject } from 'rxjs';
 import { environment } from '../environments/environment';
@@ -32,6 +31,8 @@ export class FirebaseService {
     initializeApp(environment.firebase);
     this.db = getFirestore();
     this.leaderboardColl = collection(this.db, 'leaderboard');
+
+    orderBy('score', 'desc');
 
 
     // Get Realtime Data
